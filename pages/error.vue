@@ -1,5 +1,5 @@
 <template>
-  <UHeader />
+  <AppHeader />
 
   <UMain>
     <UPage>
@@ -12,7 +12,7 @@
     </UPage>
   </UMain>
 
-  <UFooter />
+  <AppFooter />
 </template>
 
 <script setup lang="ts">
@@ -21,4 +21,7 @@ import type { NuxtError } from '#app'
 defineProps<{
   error: NuxtError
 }>()
+
+const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation(), { default: () => [] })
+provide('navigation', navigation)
 </script>
