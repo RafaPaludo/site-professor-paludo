@@ -2,12 +2,21 @@
   <!-- Hero -->
   <TheHero />
 
+  <!-- Histórico -->
+  <TheExperience />
+
   <!-- Consultoria -->
   <TheConsultancy />
 
   <!-- Cursos -->
   <TheCourses />
-</template>
-<script setup>
 
+  <!-- Blog -->
+  <TheBlog />
+
+  <!-- Contato -->
+  <TheContato />
+</template>
+
+<script setup>
 </script>

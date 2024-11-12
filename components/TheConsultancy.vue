@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 const landingSectionUi = {
-  wrapper: 'px-6 sm:px-12 md:px-12 lg:px-24 bg-dark-blue-50',
+  wrapper: 'px-6 sm:px-12 md:px-12 lg:px-24 bg-dark-blue-50 dark:bg-black-rock-950',
   container: 'gap-8 sm:gap-y-8 flex flex-col',
   title: 'text-3xl font-bold font-secondary tracking-tight text-primary dark:text-white sm:text-3xl lg:text-4xl text-left',
   description: 'text-left sm:text-center',

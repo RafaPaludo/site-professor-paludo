@@ -5,7 +5,7 @@
     orientation="horizontal"
     :links="[{ 
         label: 'Contato',
-        icon: 'i-heroicons-rocket-launch', size: 'lg'
+        icon: 'i-heroicons-rocket-launch', size: 'xl'
       }]"
   >
     <template #title>
@@ -32,7 +32,7 @@
 
 <script setup>
 const landingHeroUi = {
-  wrapper: 'py-8 sm:py-6 md:py-6 lg:py-12 relative bg-dark-blue-50 rounded-lg',
+  wrapper: 'py-8 sm:py-6 md:py-6 lg:py-12 relative bg-dark-blue-50 dark:bg-black-rock-950 rounded-lg',
   title: 'text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl',
   description: 'mt-6 text-lg font-bold tracking-tight text-gray-500 dark:text-gray-400'
 }
