@@ -1,6 +1,7 @@
 <template>
   <UContainer :ui="containerUi">
     <h2
+      id="cursos"
       class="text-3xl font-bold font-secondary tracking-tight text-primary dark:text-white sm:text-3xl lg:text-4xl text-left"
     >Cursos para o fortalecimento das organizações</h2>
 

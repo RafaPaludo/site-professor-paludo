@@ -28,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import { siteInfo } from '~/config/siteInfo';
 import { z } from 'zod'
 import type { FormSubmitEvent } from '#ui/types'
 
@@ -42,12 +43,12 @@ const landingSectionUi = {
 const features = [
   {
     name: 'Faça uma chamada',
-    description: '(48) 9 9999-9999',
+    description: siteInfo.contact.phone,
     icon: 'i-heroicons-phone-20-solid'
   },
   {
     name: 'Ou mande um e-mail',
-    description: 'professorpaludo@gmail.com',
+    description: siteInfo.contact.email,
     icon: 'i-heroicons-envelope-20-solid'
   }
 ]

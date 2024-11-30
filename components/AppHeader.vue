@@ -5,7 +5,8 @@
     </template>
 
     <template #right>
-      <UColorModeButton />
+      <UColorModeButton class="mr-4" />
+      <UButton class="px-8" size="xl" label="Contato" :to="siteInfo.contact.linkWhatsapp" target="_blank" />
     </template>
 
     <template #panel>
@@ -16,6 +17,7 @@
 
 <script setup lang="ts">
 import type { NavItem } from '@nuxt/content'
+import { siteInfo } from '~/config/siteInfo';
 
 const navigation = inject<Ref<NavItem[]>>('navigation', ref([]))
 

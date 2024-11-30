@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1>Index</h1> 
-  </div>
+  <main>
+    <ContentDoc />
+  </main>
 </template>
 <script setup>
 </script>

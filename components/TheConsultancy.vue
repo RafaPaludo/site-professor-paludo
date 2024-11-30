@@ -3,6 +3,7 @@
     title="Consultoria"
     description="Partimos da escuta, desenhando um projeto sob medida para responder às necessidades e construir as respostas com a sua participação. Havendo necessidade, temos disposição de acompanhar a execução do projeto, avaliando e ajustando progressivamente, para compartilhar contigo os resultados."
     :ui="landingSectionUi"
+    id="consultoria"
   >
     <UContainer :ui="containerCardUi">
       <UCard v-for="n in 3" :key="n" :ui="cardUi">

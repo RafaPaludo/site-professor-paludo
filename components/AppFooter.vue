@@ -17,35 +17,37 @@
 </template>
 
 <script setup lang="ts">
+import { siteInfo } from '~/config/siteInfo';
+
 const links = [{
   label: 'Mídias',
   children: [{
     label: 'Instagram',
-    to: 'https://nuxters.nuxt.com',
+    to: siteInfo.socialLinks.instagram,
     target: '_blank'
   }, {
     label: 'Youtube',
-    to: 'https://masteringnuxt.com/nuxt3?ref=nuxt',
+    to: siteInfo.socialLinks.youtube,
     target: '_blank'
   }, {
     label: 'Facebook',
-    to: 'https://github.com/nuxt',
+    to: siteInfo.socialLinks.facebook,
     target: '_blank'
   }]
 }, {
   label: 'Páginas',
   children: [{
     label: 'Home',
-    to: 'https://content.nuxt.com/',
-    target: '_blank'
+    to: '/',
+    target: '_self'
   }, {
-    label: 'Sobre',
-    to: 'https://devtools.nuxt.com/',
-    target: '_blank'
+    label: 'Consultoria',
+    to: 'http://localhost:3000/consultoria/planejamento-estrategico',
+    target: '_self'
   }, {
-    label: 'Contato',
+    label: 'Blog',
     to: 'https://image.nuxt.com/',
-    target: '_blank'
+    target: '_self'
   }]
 }, {
   label: 'Materiais',
@@ -56,10 +58,6 @@ const links = [{
   }, {
     label: 'Cursos',
     to: 'https://devtools.nuxt.com/',
-    target: '_blank'
-  }, {
-    label: 'Contato',
-    to: 'https://image.nuxt.com/',
     target: '_blank'
   }]
 }]

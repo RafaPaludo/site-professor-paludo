@@ -1,7 +1,6 @@
 <template>
   <ULandingSection
     title="Blog"
-    :features="features"
     :ui="landingSectionUi"
   >
     <UButton class="absolute right-8" icon="i-heroicons-arrow-right-16-solid" variant="ghost" trailing>

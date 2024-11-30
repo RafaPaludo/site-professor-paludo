@@ -1,13 +1,7 @@
 <template>
-  <UPageHero />
-
-  <UPage>
-    <UPageHeader />
-
-    <UPageBody prose>
-      <ContentRenderer />
-    </UPageBody>
-  </UPage>
+  <main>
+    <ContentDoc />
+  </main>
 </template>
 <script setup>
 </script>

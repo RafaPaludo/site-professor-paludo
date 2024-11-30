@@ -1,5 +1,6 @@
 <template>
   <ULandingSection
+    id="sobre"
     title="Professor José Roberto Paludo"
     description="Alguma descrição sobre as experiências."
     :features="features"
