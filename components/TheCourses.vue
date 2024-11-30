@@ -12,33 +12,34 @@
       indicators
     >
       <template #default="{ item, index }">
-        <MoleculesCourseCard :item="item" :index="index" />
+        <ComposedCourseCard :item="item" :index="index" />
       </template>
 
       <template #prev="{ onClick, disabled }">
         <UButton
-        :disabled="disabled"
-        @click="onClick"
-        icon="i-heroicons-arrow-left-16-solid"
-        variant="ghost"
-        color="primary"
-      />
+          :disabled="disabled"
+          @click="onClick"
+          icon="i-heroicons-arrow-left-16-solid"
+          variant="ghost"
+          color="primary"
+        />
       </template>
 
       <template #next="{ onClick, disabled }">
         <UButton
-        :disabled="disabled"
-        @click="onClick"
-        icon="i-heroicons-arrow-right-16-solid"
-        variant="ghost"
-        color="primary"
-      />
+          :disabled="disabled"
+          @click="onClick"
+          icon="i-heroicons-arrow-right-16-solid"
+          variant="ghost"
+          color="primary"
+        />
       </template>
     </UCarousel>
   </UContainer>
 </template>
 
 <script setup>
+// UI
 const containerUi = {
   base: 'px-6 sm:px-12 md:px-12 lg:px-24 py-4 sm:py-6 md:py-6 lg:py-12'
 }
@@ -58,12 +59,37 @@ const carouselUi = {
   }
 }
 
+// Data
 const items = [
-  'https://picsum.photos/414/376?random=1',
-  'https://picsum.photos/414/376?random=2',
-  'https://picsum.photos/414/376?random=3',
-  'https://picsum.photos/414/376?random=4',
-  'https://picsum.photos/414/376?random=5',
-  'https://picsum.photos/414/376?random=6'
+  {
+    img: 'https://picsum.photos/414/376?random=1',
+    title: 'Mandato 3c',
+    text: 'Não são as respostas certas que movem o mundo, são as perguntas. Participe dessa Jornada para Formação de mandatos Coletivos, Conectados e Compartilhados. Transforme a realidade do seu mandato e prepare-se para as próximas eleições.',
+    to: '/cursos'
+  },
+  {
+    img: 'https://picsum.photos/414/376?random=2',
+    title: 'Mandato 3c',
+    text: 'Não são as respostas certas que movem o mundo, são as perguntas. Participe dessa Jornada para Formação de mandatos Coletivos, Conectados e Compartilhados. Transforme a realidade do seu mandato e prepare-se para as próximas eleições.',
+    to: '/cursos'
+  },
+  {
+    img: 'https://picsum.photos/414/376?random=3',
+    title: 'Mandato 3c',
+    text: 'Não são as respostas certas que movem o mundo, são as perguntas. Participe dessa Jornada para Formação de mandatos Coletivos, Conectados e Compartilhados. Transforme a realidade do seu mandato e prepare-se para as próximas eleições.',
+    to: '/cursos'
+  },
+  {
+    img: 'https://picsum.photos/414/376?random=4',
+    title: 'Mandato 3c',
+    text: 'Não são as respostas certas que movem o mundo, são as perguntas. Participe dessa Jornada para Formação de mandatos Coletivos, Conectados e Compartilhados. Transforme a realidade do seu mandato e prepare-se para as próximas eleições.',
+    to: '/cursos'
+  },
+  {
+    img: 'https://picsum.photos/414/376?random=5',
+    title: 'Mandato 3c',
+    text: 'Não são as respostas certas que movem o mundo, são as perguntas. Participe dessa Jornada para Formação de mandatos Coletivos, Conectados e Compartilhados. Transforme a realidade do seu mandato e prepare-se para as próximas eleições.',
+    to: '/cursos'
+  }
 ]
 </script>
