@@ -19,4 +19,13 @@
 </template>
 
 <script setup>
+// Content
+const { data: page } = await useAsyncData('home', () => queryContent('/').findOne())
+
+useSeoMeta({
+  title: page.value.title,
+  ogTitle: page.value.title,
+  description: page.value.description,
+  ogDescription: page.value.description
+})
 </script>

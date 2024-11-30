@@ -2,48 +2,43 @@
   <ULandingSection
     title="Blog"
     :ui="landingSectionUi"
+    v-if="posts"
   >
-    <UButton class="absolute right-8" icon="i-heroicons-arrow-right-16-solid" variant="ghost" trailing>
+    <UButton class="absolute right-8" icon="i-heroicons-arrow-right-16-solid" variant="ghost" trailing to="/blog">
       Ver tudo
     </UButton>
-    <UBlogList orientation="horizontal">
+    
+    <UBlogList>
       <UBlogPost
-        title="Ainda faz sentido falar em planejamento estratégico?"
-        description="O historiador da Universidade de Jerusalém, Yuval Noah Harari, que ganhou notoriedade global por suas obras de grande fôlego e abrangência de reflexão:..."
-        date="Dec 25, 2023"
-        orientation="vertical"
-        :image="{ src: 'https://picsum.photos/640/360', alt: 'Nuxt 3.9' }"
-        :authors="[{ name: 'Daniel Roe', avatar: { src: 'https://github.com/danielroe.png', target: '_blank' }, to: 'https://twitter.com/danielcroe' }]"
-        :badge="{ label: 'Release' }"
-        to="/blog"
-      />
-      <UBlogPost
-        title="Ainda faz sentido falar em planejamento estratégico?"
-        description="O historiador da Universidade de Jerusalém, Yuval Noah Harari, que ganhou notoriedade global por suas obras de grande fôlego e abrangência de reflexão:..."
-        date="Dec 25, 2023"
-        orientation="vertical"
-        :image="{ src: 'https://picsum.photos/640/360', alt: 'Nuxt 3.9' }"
-        :authors="[{ name: 'Daniel Roe', avatar: { src: 'https://github.com/danielroe.png', target: '_blank' }, to: 'https://twitter.com/danielcroe' }]"
-        :badge="{ label: 'Release' }"
-        to="/"
-      />
-      <UBlogPost
-        title="Ainda faz sentido falar em planejamento estratégico?"
-        description="O historiador da Universidade de Jerusalém, Yuval Noah Harari, que ganhou notoriedade global por suas obras de grande fôlego e abrangência de reflexão:..."
-        date="Dec 25, 2023"
-        orientation="vertical"
-        :image="{ src: 'https://picsum.photos/640/360', alt: 'Nuxt 3.9' }"
-        :authors="[{ name: 'Daniel Roe', avatar: { src: 'https://github.com/danielroe.png', target: '_blank' }, to: 'https://twitter.com/danielcroe' }]"
-        :badge="{ label: 'Release' }"
-        to="/"
+        v-for="(post, index) in posts"
+        :key="index"
+        :to="post._path"
+        :title="post.title"
+        :description="post.description"
+        :image="post.image"
+        :date="new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })"
+        :authors="post.authors"
+        :badge="post.badge"
+        :ui="{
+          description: 'line-clamp-2'
+        }"
       />
     </UBlogList>
   </ULandingSection>
 </template>
 
 <script setup>
+// UI
 const landingSectionUi = {
   title: 'text-3xl font-bold font-secondary tracking-tight text-primary dark:text-white sm:text-3xl lg:text-4xl text-left',
   container: 'gap-16 sm:gap-y-12 flex flex-col relative',
 }
+
+// Content
+const { data: posts } = await useAsyncData('posts', () => queryContent('/blog')
+  .where({ _extension: 'md', _path: { $not: '/blog' }})
+  .sort({ date: -1 })
+  .find())
+
+defineOgImageComponent('Saas')
 </script>
