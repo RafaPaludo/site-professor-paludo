@@ -2,7 +2,7 @@
   <ULandingSection
     id="sobre"
     title="Professor José Roberto Paludo"
-    description="Alguma descrição sobre as experiências."
+    description="Uma trajetória de excelência acadêmica e organização política"
     :features="features"
     align="right"
     :ui="landingSectionUi"

@@ -11,5 +11,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   colorMode: {
     preference: 'light'
-  }
+  },
+  content: {
+    components: {
+      // Habilitar automaticamente os componentes dentro de /components
+      global: true,
+    },
+  },
 })

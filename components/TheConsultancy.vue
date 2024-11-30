@@ -6,22 +6,27 @@
     id="consultoria"
   >
     <UContainer :ui="containerCardUi">
-      <UCard v-for="n in 3" :key="n" :ui="cardUi">
+      <UCard v-for="{ icon, title, text, to, id } in cards" :key="id" :ui="cardUi">
         <template #header>
-          <UIcon name="i-heroicons-light-bulb" class="w-5 h-5" />
-          <span>Planejamento</span>
+          <UIcon :name="icon" class="w-5 h-5" />
+          <span>{{ title }}</span>
         </template>
   
         <p>
-          O planejamento estratégico é uma ferramenta que exige visão sistêmica do processo em que será inserido e requer um bom diagnóstico e uma boa análise...
+          {{ text }}
         </p>
   
         <template #footer>
-          <ULink
-            to="/"
-            active-class="text-primary"
-            inactive-class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
-          >Ver mais</ULink>
+          <UButton
+            :to="to"
+            class="py-2"
+            icon="i-heroicons-arrow-right-16-solid"
+            variant="link"
+            trailing
+            :padded="false"
+          >
+            Ver mais
+          </UButton>
         </template>
       </UCard>
     </UContainer>
@@ -29,6 +34,7 @@
 </template>
 
 <script setup lang="ts">
+// Ui
 const landingSectionUi = {
   wrapper: 'px-6 sm:px-12 md:px-12 lg:px-24 bg-dark-blue-50 dark:bg-black-rock-950',
   container: 'gap-8 sm:gap-y-8 flex flex-col',
@@ -65,4 +71,29 @@ const containerCardUi = {
   padding: '',
   constrained: 'max-w-5xl'
 }
+
+// Data
+const cards = [
+  {
+    id: 0,
+    title: 'Planejamento',
+    icon: 'i-heroicons-presentation-chart-bar-20-solid',
+    text: 'O planejamento estratégico é uma ferramenta que exige visão sistêmica do processo em que será inserido e requer um bom diagnóstico e uma boa análise',
+    to: '/consultoria/planejamento-estrategico'
+  },
+  {
+    id: 1,
+    title: 'Mediação',
+    icon: 'i-heroicons-scale-16-solid',
+    text: 'Oferecemos diversos cursos para atender suas demandas específicas. Além de curadoria, mediação de eventos, reuniões, congressos e seminários.',
+    to: '/consultoria/mediacao'
+  },
+  {
+    id: 2,
+    title: 'Gestão Pessoas',
+    icon: 'i-heroicons-user-group-solid',
+    text: 'Alinhando a formação em coaching holomentoring, coaching ontológico e cursos em facilitación y cambio com a experiência de liderança de equipes, podemos oferecer...',
+    to: '/consultoria/rh'
+  }
+]
 </script>
